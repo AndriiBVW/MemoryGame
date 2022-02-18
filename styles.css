@@ -1,0 +1,115 @@
+html,
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	padding: 0;
+	margin: 0;
+
+	background: #df9c1f url(img/bg.svg) center / cover no-repeat;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: 200px;
+	gap: 20px;
+	width: 100%;
+	max-width: 1500px;
+	padding: 20px;
+	margin: 0 auto;
+}
+
+.card {
+	position: relative;
+
+	cursor: pointer;
+}
+
+.card_front,
+.card_back {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	overflow: hidden;
+	backface-visibility: hidden;
+	transition: 1s;
+
+	background: #ffe255;
+	box-shadow: 1px 1px 4px 0px rgb(0, 0, 0, 15%);
+}
+
+.card_back {
+	transform: rotateY(180deg);
+	background: #f5b135;
+}
+
+.card_front img,
+.card_back img {
+	display: block;
+	width: 30%;
+	margin: 0 auto;
+	user-select: none;
+	pointer-events: none;
+}
+
+.card_back img {
+	border-radius: 50%;
+	border: 5px solid #873d18;
+}
+
+.card.active .card_front {
+	transform: rotateY(180deg);
+}
+
+.card.active .card_back {
+	transform: rotateY(360deg);
+}
+
+.finish {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	max-width: 500px;
+	border-radius: 20px;
+	padding: 20px;
+
+	background-color: #fff;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.finish img {
+	width: 100%;
+}
+
+.btn {
+	position: relative;
+	display: block;
+	width: 150px;
+	outline: none;
+	border: none;
+	border-radius: 20px;
+	padding: 12px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	cursor: pointer;
+
+	background-color: #1ec0ff;
+	color: #ffffff;
+
+	font-family: Roboto, Arial, sans-serif;
+	font-weight: 700;
+	font-size: 15px;
+}
